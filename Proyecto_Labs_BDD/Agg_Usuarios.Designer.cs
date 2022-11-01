@@ -267,7 +267,7 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(1039, 407);
+            this.dataGridView3.Size = new System.Drawing.Size(1039, 319);
             this.dataGridView3.TabIndex = 0;
             // 
             // tabPage3
