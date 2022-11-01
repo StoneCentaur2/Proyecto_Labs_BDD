@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.X500;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,6 +18,7 @@ namespace Proyecto_Labs_BDD
         readonly MySqlConnection cn;
         MySqlCommand cmd;
         MySqlDataReader dr;
+        MySqlDataAdapter ad;
         //Conexion SQL
         public SQL()
         {
@@ -113,7 +115,7 @@ namespace Proyecto_Labs_BDD
                 {
                     contador++;
                 }
-                dr.Close();
+                dr.Close();//Todo esto realiza un recorrido int (numerico) para saber cuantas veces da de resultado
             }
             catch (Exception ex) { MessageBox.Show("Error con la busqueda \n Tipo: " + ex.ToString()); }
             return contador;
@@ -131,12 +133,13 @@ namespace Proyecto_Labs_BDD
             }
             catch (Exception ex) { MessageBox.Show("No se pudo cargar la tabla. \n Tipo: " + ex.ToString()); throw; }
         }
-        public string Solicitudes()
+        public string Solicitudes(int ID, string Herramienta, string Nombre, string Docente, string Fecha)
         {
             string Mensaje = "Se ingreso correctamente";
             try
             {
-                string query = "insert into  values();";
+                cmd = new MySqlCommand("insert into herramienta values("+ID+", '"+Herramienta+"', '"+Nombre+"', '"+Docente+"', '"+Fecha+"');",cn);
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex){ Mensaje = "Error de ingreso, \n Tipo: " + ex.ToString(); throw; }
             return Mensaje;

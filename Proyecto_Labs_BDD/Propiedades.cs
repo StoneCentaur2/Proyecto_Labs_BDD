@@ -10,8 +10,7 @@ namespace Proyecto_Labs_BDD
     {
         public static int ID_Usuario;
         public static string Carrera_Usua;
+        public static string Nombre_Usuario;
         public static int Encargado;
-       // public int Usuario { get => ID_Usuario; set => ID_Usuario = value; }
-       // public int Nombre { get; set; }
     }
 }
