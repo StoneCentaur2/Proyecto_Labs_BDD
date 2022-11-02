@@ -13,12 +13,13 @@ namespace Proyecto_Labs_BDD
 {
     class SQL
     {
+        public string[] Array_Teachers = new string[5];
+
         //Tipo de usuario, se asigna en Login
         public string user = "";
         readonly MySqlConnection cn;
         MySqlCommand cmd;
         MySqlDataReader dr;
-        MySqlDataAdapter ad;
         //Conexion SQL
         public SQL()
         {
@@ -34,11 +35,11 @@ namespace Proyecto_Labs_BDD
             }
         }
 
-        public int BuscarUsuarioSesión (int Usuario)//Busqueda de usuario
+        public int BuscarUsuarioSesión (int Usuario, string Contraseña)//Busqueda para verificar
         {
             int contrador = 0;
             try {
-                cmd = new MySqlCommand("SELECT * FROM usuarios where ID = " + Usuario + ";", cn);
+                cmd = new MySqlCommand("SELECT * FROM usuarios where ID = " + Usuario + " and Contraseña = '"+ Contraseña +"';", cn);
                 dr = cmd.ExecuteReader();//Para que la variable realice la busqueda se agrega en una variable
                 while (dr.Read())//Esta varible lee hasta que encuentre más de 1 coincidencia
                     {
@@ -49,19 +50,44 @@ namespace Proyecto_Labs_BDD
             catch (Exception ex) { MessageBox.Show("Error con el usuario \n Tipo: " + ex.ToString()); }//catch por cualquier error con la base de datos
             return contrador;//devuelde la cantidad de coincidencias que encuentre
         }
-        public int BuscarContraseña (string Constraseña)
+        public string NameUsu (int ID)
         {
-            int contador = 0;
+            string contador;
             try {
-                cmd = new MySqlCommand("SELECT * FROM usuarios where Contraseña = '" + Constraseña + "';", cn);
+                cmd = new MySqlCommand("select substring_index(Nombre, ',', "+ID+") from usuarios where ID = "+ID+";", cn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    contador++;
+
+                    Propiedades.Nombre_Usuario = dr.GetString(0);
                 }
                 dr.Close();
+                contador = Propiedades.Nombre_Usuario;
             }
-            catch (Exception ex) { MessageBox.Show("Error con la contraseña \n Tipo: " + ex.ToString()); }
+            catch (Exception ex) { MessageBox.Show(contador ="Error con la consulta"+ " \n Tipo: " + ex.ToString()); }
+            return contador;
+        }
+        public string Teachers()
+        {
+            string contador;
+            string Ma2;
+            string Ma3;
+            try
+            {
+                    cmd = new MySqlCommand("select substring_index(Nombre, ',', 1) from usuarios where Maestro = 1 and Carrera = '"+Propiedades.Carrera_Usua+"';", cn);
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                    Propiedades.Teacher_Usua1 = dr.GetString(0);
+                    Propiedades.Teacher_Usua2 = dr.GetString(1);
+                    Propiedades.Teacher_Usua3 = dr.GetString(2);
+                }
+                    dr.Close();
+                contador = Propiedades.Teacher_Usua1;
+                Ma2 = Propiedades.Teacher_Usua2;
+                Ma3 = Propiedades.Teacher_Usua3;
+            }
+            catch (Exception ex) { MessageBox.Show(contador = "Error con la consulta" + " \n Tipo: " + ex.ToString()); }
             return contador;
         }
         public int BuscarEncargado(int Usuario, int Encargado)

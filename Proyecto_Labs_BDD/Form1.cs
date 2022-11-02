@@ -29,7 +29,7 @@ namespace Proyecto_Labs_BDD
             {
                 MessageBox.Show("Rellene de forma correcta los campos");
             }
-            else if (sql.BuscarUsuarioSesión(Convert.ToInt32(tBx_Usuario.Text)) == 1 && sql.BuscarContraseña(tBx_Contraseña.Text) == 1)
+            else if (sql.BuscarUsuarioSesión(Convert.ToInt32(tBx_Usuario.Text), tBx_Contraseña.Text) == 1)
             {
                 Propiedades.ID_Usuario = Convert.ToInt32(tBx_Usuario.Text);
                 MessageBox.Show("¡Bienvendi@!");
