@@ -87,7 +87,7 @@ namespace Proyecto_Labs_BDD
                 Ma2 = Propiedades.Teacher_Usua2;
                 Ma3 = Propiedades.Teacher_Usua3;
             }
-            catch (Exception ex) { MessageBox.Show(contador = "Error con la consulta" + " \n Tipo: " + ex.ToString()); }
+            catch (Exception ex) { MessageBox.Show(contador = "Error con la consulta Teachers" + " \n Tipo: " + ex.ToString()); }
             return contador;
         }
         public int BuscarEncargado(int Usuario, int Encargado)
