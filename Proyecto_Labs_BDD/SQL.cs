@@ -70,8 +70,6 @@ namespace Proyecto_Labs_BDD
         public string Teachers()
         {
             string contador;
-            string Ma2;
-            string Ma3;
             try
             {
                     cmd = new MySqlCommand("select substring_index(Nombre, ',', 1) from usuarios where Maestro = 1 and Carrera = '"+Propiedades.Carrera_Usua+"';", cn);
@@ -84,8 +82,6 @@ namespace Proyecto_Labs_BDD
                 }
                     dr.Close();
                 contador = Propiedades.Teacher_Usua1;
-                Ma2 = Propiedades.Teacher_Usua2;
-                Ma3 = Propiedades.Teacher_Usua3;
             }
             catch (Exception ex) { MessageBox.Show(contador = "Error con la consulta Teachers" + " \n Tipo: " + ex.ToString()); }
             return contador;
