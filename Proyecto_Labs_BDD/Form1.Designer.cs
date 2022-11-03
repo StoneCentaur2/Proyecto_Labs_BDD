@@ -52,9 +52,9 @@
             this.btn_Entrar.BackColor = System.Drawing.Color.Lavender;
             this.btn_Entrar.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Entrar.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Entrar.Location = new System.Drawing.Point(340, 220);
+            this.btn_Entrar.Location = new System.Drawing.Point(340, 213);
             this.btn_Entrar.Name = "btn_Entrar";
-            this.btn_Entrar.Size = new System.Drawing.Size(92, 30);
+            this.btn_Entrar.Size = new System.Drawing.Size(92, 42);
             this.btn_Entrar.TabIndex = 0;
             this.btn_Entrar.Text = "Entrar";
             this.btn_Entrar.UseVisualStyleBackColor = false;
@@ -116,9 +116,9 @@
             // 
             this.btn_Salir.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Salir.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Salir.Location = new System.Drawing.Point(340, 283);
+            this.btn_Salir.Location = new System.Drawing.Point(340, 277);
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(92, 30);
+            this.btn_Salir.Size = new System.Drawing.Size(92, 43);
             this.btn_Salir.TabIndex = 6;
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.UseVisualStyleBackColor = true;

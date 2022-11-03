@@ -32,8 +32,9 @@ namespace Proyecto_Labs_BDD
             }
             else if (sql.BuscarUsuarioSesión(Convert.ToInt32(tBx_Usuario.Text), tBx_Contraseña.Text) == 1)
             {
+                sql.NameUsu(Convert.ToInt32(tBx_Usuario.Text));
                 Propiedades.ID_Usuario = Convert.ToInt32(tBx_Usuario.Text);
-                MessageBox.Show("¡Bienvendi@!");
+                MessageBox.Show("¡Bienvendi@! " + Propiedades.Nombre_Usuario);
                 Form form = new Solicitud();
                 form.Show();
                 this.Close();

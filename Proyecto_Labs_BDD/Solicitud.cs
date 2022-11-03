@@ -56,7 +56,6 @@ namespace Proyecto_Labs_BDD
                 cmbx_Docente.Items.Add(sql.Teachers());
             }
             Propiedades.Time = dateTimePicker1.Value;
-            sql.NameUsu(Propiedades.ID_Usuario);
             Login login = new Login();
             login.Close();
         }
