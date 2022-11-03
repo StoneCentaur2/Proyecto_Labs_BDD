@@ -122,7 +122,7 @@ namespace Proyecto_Labs_BDD
             }
             catch (Exception ex) { MessageBox.Show("No se pudo cargar la tabla. \n Tipo: " + ex.ToString()); throw; }
         }
-        public int EncargadoAcceso(string Carrera)
+        public int Verificacion(string Carrera)
         {
             int contador = 0;
             try

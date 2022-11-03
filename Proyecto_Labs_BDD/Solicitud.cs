@@ -27,25 +27,31 @@ namespace Proyecto_Labs_BDD
             {
                 Propiedades.Encargado = 0;
             }
-            if (sql.EncargadoAcceso("ing. en sistemas computacionales") == 1)
+            if (sql.Verificacion("ing. en sistemas computacionales") == 1)
             {
                 Propiedades.Carrera_Usua = "ing. en sistemas computacionales";
                 cmbx_Docente.Items.Add("José María Gerónimo Pérez");
+                Propiedades.Teacher_Usua2 = "José María Gerónimo Pérez";
                 cmbx_Docente.Items.Add("Diana Elizabeth López Chacon");
+                Propiedades.Teacher_Usua3 = "Diana Elizabeth López Chacon";
                 cmbx_Docente.Items.Add(sql.Teachers());
             }
-            if (sql.EncargadoAcceso("ing. civil") == 1)
+            if (sql.Verificacion("ing. civil") == 1)
             {
                 Propiedades.Carrera_Usua = "ing. civil";
                 cmbx_Docente.Items.Add("Daniel Escalante Jiménez");
+                Propiedades.Teacher_Usua2 = "Daniel Escalante Jiménez";
                 cmbx_Docente.Items.Add("Everardo Flores Ortiz");
+                Propiedades.Teacher_Usua3 = "Everardo Flores Ortiz";
                 cmbx_Docente.Items.Add(sql.Teachers());
             }
-            if (sql.EncargadoAcceso("ing. industrial") == 1)
+            if (sql.Verificacion("ing. industrial") == 1)
             {
                 Propiedades.Carrera_Usua = "ing. industrial";
-                cmbx_Docente.Items.Add("Jezaharel Rocio Ibarra"); 
+                cmbx_Docente.Items.Add("Jezaharel Rocio Ibarra");
+                Propiedades.Teacher_Usua2 = "Jezaharel Rocio Ibarra";
                 cmbx_Docente.Items.Add("Jorge Ibarra Soto");
+                Propiedades.Teacher_Usua3 = "Jorge Ibarra Soto";
                 cmbx_Docente.Items.Add(sql.Teachers());
             }
             Propiedades.Time = dateTimePicker1.Value;

@@ -28,59 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Solicitud));
-            this.btn_Agg = new System.Windows.Forms.Button();
-            this.btn_Home = new System.Windows.Forms.Button();
-            this.btn_agg_Usuario = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tbx_Solicitud = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_Borrar = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cmbx_Docente = new System.Windows.Forms.ComboBox();
+            this.btn_Borrar = new System.Windows.Forms.Button();
+            this.btn_agg_Usuario = new System.Windows.Forms.Button();
+            this.btn_Home = new System.Windows.Forms.Button();
+            this.btn_Agg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_Agg
-            // 
-            this.btn_Agg.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Agg.BackgroundImage")));
-            this.btn_Agg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Agg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Agg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Agg.Location = new System.Drawing.Point(881, 448);
-            this.btn_Agg.Name = "btn_Agg";
-            this.btn_Agg.Size = new System.Drawing.Size(80, 76);
-            this.btn_Agg.TabIndex = 0;
-            this.btn_Agg.UseVisualStyleBackColor = true;
-            this.btn_Agg.Click += new System.EventHandler(this.btn_Agg_Click);
-            // 
-            // btn_Home
-            // 
-            this.btn_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Home.BackgroundImage")));
-            this.btn_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Home.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Home.Location = new System.Drawing.Point(977, 448);
-            this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(80, 76);
-            this.btn_Home.TabIndex = 1;
-            this.btn_Home.UseVisualStyleBackColor = true;
-            this.btn_Home.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_agg_Usuario
-            // 
-            this.btn_agg_Usuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_agg_Usuario.BackgroundImage")));
-            this.btn_agg_Usuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_agg_Usuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_agg_Usuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_agg_Usuario.Location = new System.Drawing.Point(690, 448);
-            this.btn_agg_Usuario.Name = "btn_agg_Usuario";
-            this.btn_agg_Usuario.Size = new System.Drawing.Size(80, 76);
-            this.btn_agg_Usuario.TabIndex = 2;
-            this.btn_agg_Usuario.UseVisualStyleBackColor = true;
-            this.btn_agg_Usuario.Visible = false;
-            this.btn_agg_Usuario.Click += new System.EventHandler(this.btn_agg_Usuario_Click);
             // 
             // dataGridView1
             // 
@@ -124,19 +83,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Docente encargado";
             // 
-            // btn_Borrar
-            // 
-            this.btn_Borrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Borrar.BackgroundImage")));
-            this.btn_Borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Borrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Borrar.Location = new System.Drawing.Point(785, 448);
-            this.btn_Borrar.Name = "btn_Borrar";
-            this.btn_Borrar.Size = new System.Drawing.Size(80, 76);
-            this.btn_Borrar.TabIndex = 9;
-            this.btn_Borrar.UseVisualStyleBackColor = true;
-            this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
@@ -155,6 +101,59 @@
             this.cmbx_Docente.Name = "cmbx_Docente";
             this.cmbx_Docente.Size = new System.Drawing.Size(409, 33);
             this.cmbx_Docente.TabIndex = 13;
+            // 
+            // btn_Borrar
+            // 
+            this.btn_Borrar.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.circulo_cruzado;
+            this.btn_Borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Borrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Borrar.Location = new System.Drawing.Point(785, 448);
+            this.btn_Borrar.Name = "btn_Borrar";
+            this.btn_Borrar.Size = new System.Drawing.Size(80, 76);
+            this.btn_Borrar.TabIndex = 9;
+            this.btn_Borrar.UseVisualStyleBackColor = true;
+            this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
+            // 
+            // btn_agg_Usuario
+            // 
+            this.btn_agg_Usuario.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.menu_puntos_vertical;
+            this.btn_agg_Usuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_agg_Usuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_agg_Usuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_agg_Usuario.Location = new System.Drawing.Point(690, 448);
+            this.btn_agg_Usuario.Name = "btn_agg_Usuario";
+            this.btn_agg_Usuario.Size = new System.Drawing.Size(80, 76);
+            this.btn_agg_Usuario.TabIndex = 2;
+            this.btn_agg_Usuario.UseVisualStyleBackColor = true;
+            this.btn_agg_Usuario.Visible = false;
+            this.btn_agg_Usuario.Click += new System.EventHandler(this.btn_agg_Usuario_Click);
+            // 
+            // btn_Home
+            // 
+            this.btn_Home.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.casa;
+            this.btn_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Home.Location = new System.Drawing.Point(977, 448);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(80, 76);
+            this.btn_Home.TabIndex = 1;
+            this.btn_Home.UseVisualStyleBackColor = true;
+            this.btn_Home.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_Agg
+            // 
+            this.btn_Agg.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.agregar;
+            this.btn_Agg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Agg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Agg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Agg.Location = new System.Drawing.Point(881, 448);
+            this.btn_Agg.Name = "btn_Agg";
+            this.btn_Agg.Size = new System.Drawing.Size(80, 76);
+            this.btn_Agg.TabIndex = 0;
+            this.btn_Agg.UseVisualStyleBackColor = true;
+            this.btn_Agg.Click += new System.EventHandler(this.btn_Agg_Click);
             // 
             // Solicitud
             // 

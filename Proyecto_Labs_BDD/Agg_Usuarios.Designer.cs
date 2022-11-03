@@ -47,6 +47,16 @@
             this.cmb_Encargado = new System.Windows.Forms.ComboBox();
             this.cmb_Docente = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.Descripcion = new System.Windows.Forms.Label();
+            this.tbx_IDPres = new System.Windows.Forms.TextBox();
+            this.tbx_DescrPres = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmb_DocentePres = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.btn_Regresar = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
             this.btn_SearchUsers = new System.Windows.Forms.Button();
@@ -54,6 +64,8 @@
             this.btn_ModUser = new System.Windows.Forms.Button();
             this.btn_Eliminar_text = new System.Windows.Forms.Button();
             this.btn_AddUser = new System.Windows.Forms.Button();
+            this.btn_Devuelto = new System.Windows.Forms.Button();
+            this.btn_SearchPrestamo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,7 +83,7 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 50);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1078, 550);
+            this.tabControl1.Size = new System.Drawing.Size(1103, 550);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -97,7 +109,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1070, 521);
+            this.tabPage1.Size = new System.Drawing.Size(1095, 521);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -174,19 +186,30 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1050, 304);
+            this.dataGridView1.Size = new System.Drawing.Size(1069, 304);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.cmb_DocentePres);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.tbx_DescrPres);
+            this.tabPage2.Controls.Add(this.tbx_IDPres);
+            this.tabPage2.Controls.Add(this.Descripcion);
             this.tabPage2.Controls.Add(this.dataGridView3);
+            this.tabPage2.Controls.Add(this.btn_Devuelto);
+            this.tabPage2.Controls.Add(this.btn_SearchPrestamo);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1070, 521);
+            this.tabPage2.Size = new System.Drawing.Size(1095, 521);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Prestado";
+            this.tabPage2.Text = "Prestamos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
@@ -196,16 +219,17 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(1039, 319);
+            this.dataGridView3.Size = new System.Drawing.Size(1065, 333);
             this.dataGridView3.TabIndex = 0;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1070, 521);
+            this.tabPage3.Size = new System.Drawing.Size(1095, 521);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Inventario";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -264,13 +288,98 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "1 = sí\r\n0 = no";
             // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSize = true;
+            this.Descripcion.Location = new System.Drawing.Point(135, 15);
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Size = new System.Drawing.Size(231, 25);
+            this.Descripcion.TabIndex = 26;
+            this.Descripcion.Text = "Descripcion del prestamo";
+            // 
+            // tbx_IDPres
+            // 
+            this.tbx_IDPres.Location = new System.Drawing.Point(7, 52);
+            this.tbx_IDPres.Name = "tbx_IDPres";
+            this.tbx_IDPres.Size = new System.Drawing.Size(104, 30);
+            this.tbx_IDPres.TabIndex = 27;
+            // 
+            // tbx_DescrPres
+            // 
+            this.tbx_DescrPres.Location = new System.Drawing.Point(140, 52);
+            this.tbx_DescrPres.Name = "tbx_DescrPres";
+            this.tbx_DescrPres.Size = new System.Drawing.Size(320, 30);
+            this.tbx_DescrPres.TabIndex = 28;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 25);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "ID ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(483, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(203, 25);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Nombre del solicitante";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(488, 52);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(258, 30);
+            this.textBox1.TabIndex = 31;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(778, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(183, 25);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Docente encargado";
+            // 
+            // cmb_DocentePres
+            // 
+            this.cmb_DocentePres.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_DocentePres.FormattingEnabled = true;
+            this.cmb_DocentePres.Location = new System.Drawing.Point(783, 49);
+            this.cmb_DocentePres.Name = "cmb_DocentePres";
+            this.cmb_DocentePres.Size = new System.Drawing.Size(289, 33);
+            this.cmb_DocentePres.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 315);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(710, 203);
+            this.label10.TabIndex = 1;
+            this.label10.Text = resources.GetString("label10.Text");
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(15, 368);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(616, 150);
+            this.label11.TabIndex = 34;
+            this.label11.Text = resources.GetString("label11.Text");
+            // 
             // btn_Regresar
             // 
             this.btn_Regresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Regresar.BackgroundImage")));
             this.btn_Regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Regresar.Location = new System.Drawing.Point(903, 5);
+            this.btn_Regresar.Location = new System.Drawing.Point(892, -1);
             this.btn_Regresar.Name = "btn_Regresar";
             this.btn_Regresar.Size = new System.Drawing.Size(75, 61);
             this.btn_Regresar.TabIndex = 3;
@@ -283,7 +392,7 @@
             this.btn_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Home.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Home.Location = new System.Drawing.Point(997, 5);
+            this.btn_Home.Location = new System.Drawing.Point(986, -1);
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(77, 61);
             this.btn_Home.TabIndex = 15;
@@ -296,7 +405,7 @@
             this.btn_SearchUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SearchUsers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SearchUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_SearchUsers.Location = new System.Drawing.Point(610, 429);
+            this.btn_SearchUsers.Location = new System.Drawing.Point(627, 430);
             this.btn_SearchUsers.Name = "btn_SearchUsers";
             this.btn_SearchUsers.Size = new System.Drawing.Size(80, 76);
             this.btn_SearchUsers.TabIndex = 23;
@@ -309,7 +418,7 @@
             this.btn_DeleteUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_DeleteUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_DeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_DeleteUser.Location = new System.Drawing.Point(800, 429);
+            this.btn_DeleteUser.Location = new System.Drawing.Point(817, 430);
             this.btn_DeleteUser.Name = "btn_DeleteUser";
             this.btn_DeleteUser.Size = new System.Drawing.Size(80, 76);
             this.btn_DeleteUser.TabIndex = 22;
@@ -322,7 +431,7 @@
             this.btn_ModUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_ModUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ModUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_ModUser.Location = new System.Drawing.Point(890, 429);
+            this.btn_ModUser.Location = new System.Drawing.Point(907, 430);
             this.btn_ModUser.Name = "btn_ModUser";
             this.btn_ModUser.Size = new System.Drawing.Size(80, 76);
             this.btn_ModUser.TabIndex = 21;
@@ -335,7 +444,7 @@
             this.btn_Eliminar_text.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Eliminar_text.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Eliminar_text.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Eliminar_text.Location = new System.Drawing.Point(980, 429);
+            this.btn_Eliminar_text.Location = new System.Drawing.Point(997, 430);
             this.btn_Eliminar_text.Name = "btn_Eliminar_text";
             this.btn_Eliminar_text.Size = new System.Drawing.Size(80, 76);
             this.btn_Eliminar_text.TabIndex = 2;
@@ -348,19 +457,43 @@
             this.btn_AddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_AddUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_AddUser.Location = new System.Drawing.Point(705, 429);
+            this.btn_AddUser.Location = new System.Drawing.Point(722, 430);
             this.btn_AddUser.Name = "btn_AddUser";
             this.btn_AddUser.Size = new System.Drawing.Size(80, 76);
             this.btn_AddUser.TabIndex = 1;
             this.btn_AddUser.UseVisualStyleBackColor = true;
             this.btn_AddUser.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
+            // btn_Devuelto
+            // 
+            this.btn_Devuelto.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.descargar__1_;
+            this.btn_Devuelto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Devuelto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Devuelto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Devuelto.Location = new System.Drawing.Point(881, 442);
+            this.btn_Devuelto.Name = "btn_Devuelto";
+            this.btn_Devuelto.Size = new System.Drawing.Size(80, 76);
+            this.btn_Devuelto.TabIndex = 25;
+            this.btn_Devuelto.UseVisualStyleBackColor = true;
+            // 
+            // btn_SearchPrestamo
+            // 
+            this.btn_SearchPrestamo.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.buscar_alt;
+            this.btn_SearchPrestamo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SearchPrestamo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SearchPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_SearchPrestamo.Location = new System.Drawing.Point(778, 442);
+            this.btn_SearchPrestamo.Name = "btn_SearchPrestamo";
+            this.btn_SearchPrestamo.Size = new System.Drawing.Size(80, 76);
+            this.btn_SearchPrestamo.TabIndex = 24;
+            this.btn_SearchPrestamo.UseVisualStyleBackColor = true;
+            // 
             // Agg_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(1102, 612);
+            this.ClientSize = new System.Drawing.Size(1128, 612);
             this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.btn_Home);
             this.Controls.Add(this.tabControl1);
@@ -375,8 +508,10 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -408,5 +543,17 @@
         private System.Windows.Forms.Button btn_ModUser;
         private System.Windows.Forms.Button btn_DeleteUser;
         private System.Windows.Forms.Button btn_SearchUsers;
+        private System.Windows.Forms.Button btn_Devuelto;
+        private System.Windows.Forms.Button btn_SearchPrestamo;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbx_DescrPres;
+        private System.Windows.Forms.TextBox tbx_IDPres;
+        private System.Windows.Forms.Label Descripcion;
+        private System.Windows.Forms.ComboBox cmb_DocentePres;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }

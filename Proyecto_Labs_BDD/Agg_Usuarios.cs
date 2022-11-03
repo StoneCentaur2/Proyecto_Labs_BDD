@@ -17,6 +17,9 @@ namespace Proyecto_Labs_BDD
         public Agg_Usuarios()
         {
             InitializeComponent();
+            cmb_DocentePres.Items.Add(Propiedades.Teacher_Usua2);
+            cmb_DocentePres.Items.Add(Propiedades.Teacher_Usua3);
+            cmb_DocentePres.Items.Add(Propiedades.Teacher_Usua1);
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -26,22 +29,9 @@ namespace Proyecto_Labs_BDD
 
         private void Agg_Usuarios_Load(object sender, EventArgs e)
         {
-            if (sql.EncargadoAcceso("ing. en sistemas computacionales") == 1)
-            {
-                Propiedades.Carrera_Usua = "ing. en sistemas computacionales";
-                dataGridView2.DataSource = sql.CargarInventario();
-                dataGridView1.DataSource = sql.CargarUsuarios();
-            }
-            if (sql.EncargadoAcceso("ing. civil") == 1)
-            {
-                Propiedades.Carrera_Usua = "ing. civil";
-                dataGridView2.DataSource = sql.CargarInventario();
-            }
-            if (sql.EncargadoAcceso("ing. industrial") == 1)
-            {
-                Propiedades.Carrera_Usua = "ing. industrial";
-                dataGridView2.DataSource = sql.CargarInventario();
-            }
+            dataGridView2.DataSource = sql.CargarInventario();
+            dataGridView1.DataSource = sql.CargarUsuarios();
+            dataGridView3.DataSource = sql.CargarHerramientas();
         }
 
         private void btn_Regresar_Click(object sender, EventArgs e)
