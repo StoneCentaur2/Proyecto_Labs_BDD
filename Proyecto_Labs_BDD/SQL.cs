@@ -303,5 +303,17 @@ namespace Proyecto_Labs_BDD
             catch (Exception ex) { Mss = "Error de al eliminar. \n Tipo: " + ex.ToString(); throw; }
             return Mss;
         }
+        public string DeleteInvent(string Herra, string Serie)
+        {
+            string Mss = "Se elimino correctamente";
+            try
+            {
+                cmd = new MySqlCommand("delete from inventario where ID = '"+Propiedades.IDHerramientas+"' Descripcion = '" + Herra + "' and Serie = '" + Serie + "'" +
+                    " and Carrera = '" + Propiedades.Carrera_Usua + "';", cn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { Mss = "Error de ingreso, \n Tipo: " + ex.ToString(); throw; }
+            return Mss;
+        }
     }
 }

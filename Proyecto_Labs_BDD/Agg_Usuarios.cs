@@ -300,12 +300,28 @@ namespace Proyecto_Labs_BDD
         {
             if(tbx_CantInvent.Text != "" && tbx_ModeloInvent.Text != "" && tbx_SerieInvent.Text != "" && tbx_HerraInvent.Text != "")
             { sql.AddInvent(tbx_HerraInvent.Text, Convert.ToInt32(tbx_CantInvent.Text), tbx_MarcaInvent.Text, tbx_ModeloInvent.Text, tbx_SerieInvent.Text); }
+            else
+            {
+                MessageBox.Show("Rellenar correctamente los espacios");
+            }
             LoadandClear();
         }
 
         private void btn_deleteInvent_Click(object sender, EventArgs e)
         {
-
+            if (tbx_CantInvent.Text != "" && tbx_ModeloInvent.Text != "" && tbx_SerieInvent.Text != "" && tbx_HerraInvent.Text != "")
+            {
+                MessageBox.Show("Solo se rellena los campos de herramienta y serie");
+            }
+            else if (tbx_SerieInvent.Text != "" && tbx_HerraInvent.Text != "")
+            {
+                sql.IDherramienta("Descripcion", tbx_HerraInvent.Text);
+                sql.DeleteInvent(tbx_HerraInvent.Text, tbx_SerieInvent.Text);
+            }
+            else
+            {
+                MessageBox.Show("Rellenar correctamente los espacios");
+            }
         }
 
         private void btn_ModInvent_Click(object sender, EventArgs e)
