@@ -28,6 +28,7 @@ CREATE TABLE `usuarios` (
   `Carrera` char(85) NOT NULL,
   `Nombre` char(45) NOT NULL,
   `Encargado` int NOT NULL,
+  `Docente` int NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +39,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (2,'admin','Ing. en sistemas computacionales','Fernanda',1),(41,'Diana','ing. en sistemas computacionales','Diana Elizabeth López Chacon',0),(42,'jose','ing. en sistemas computacionales','José María Gerónimo Pérez',0),(43,'Daniel','ing. en sistemas computacionales','Daniel Alonso Osuna Talamantes',0),(44,'Felipe','ing. en sistemas computacionales','Felipe de Jesús castillo Duarte',1),(45,'Andres','ing. civil','Andrés piña gastelum',1),(46,'Daniel','ing. civil','Daniel Escalante Jiménez',0),(47,'Everardo','ing. civil','Everardo Flores Ortiz',0),(48,'Florencio','ing. civil','Florencio Rivera Dorame',0),(49,'Rocio','ing. industrial','Jezaharel Rocio Ibarra',0),(50,'Jorge','ing. industrial','Jorge Ibarra Soto',0),(51,'Gilda','ing. industrial','Gilda Elisa Tiznado Parra',0),(52,'Jairo','ing. industrial','Jairo Blas Izquierdo',1),(19302040,'comun','Ing. Civil','Luis',0);
+INSERT INTO `usuarios` VALUES (2,'admin','Ing. en sistemas computacionales','Fernanda Ibarra Rodriguez',1,0),(41,'Diana','ing. en sistemas computacionales','Diana Elizabeth López Chacon',0,1),(42,'jose','ing. en sistemas computacionales','José María Gerónimo Pérez',0,1),(43,'Daniel','ing. en sistemas computacionales','Daniel Alonso Osuna Talamantes',0,1),(44,'Felipe','ing. en sistemas computacionales','Felipe de Jesús castillo Duarte',1,0),(45,'Andres','ing. civil','Andrés piña gastelum',1,0),(46,'Daniel','ing. civil','Daniel Escalante Jiménez',0,1),(47,'Everardo','ing. civil','Everardo Flores Ortiz',0,1),(48,'Florencio','ing. civil','Florencio Rivera Dorame',0,1),(49,'Rocio','ing. industrial','Jezaharel Rocio Ibarra',0,1),(50,'Jorge','ing. industrial','Jorge Ibarra Soto',0,1),(51,'Gilda','ing. industrial','Gilda Elisa Tiznado Parra',0,1),(52,'Jairo','ing. industrial','Jairo Blas Izquierdo',1,0),(19303057,'RousLee','ing. en sistemas computacionales','Jesus Orlando Mejia Peña',0,0);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-01 11:34:20
+-- Dump completed on 2022-11-03  1:09:10
