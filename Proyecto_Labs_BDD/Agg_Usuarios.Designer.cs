@@ -61,24 +61,24 @@
             this.btn_Devuelto = new System.Windows.Forms.Button();
             this.btn_SearchPrestamo = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.btn_Regresar = new System.Windows.Forms.Button();
-            this.btn_Home = new System.Windows.Forms.Button();
-            this.tbx_HerraInvent = new System.Windows.Forms.TextBox();
-            this.tbx_CantInvent = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tbx_MarcaInvent = new System.Windows.Forms.TextBox();
-            this.tbx_ModeloInvent = new System.Windows.Forms.TextBox();
-            this.tbx_SerieInvent = new System.Windows.Forms.TextBox();
             this.btn_Inven = new System.Windows.Forms.Button();
             this.btn_deleteInvent = new System.Windows.Forms.Button();
             this.btn_ModInvent = new System.Windows.Forms.Button();
             this.btn_ClearInvent = new System.Windows.Forms.Button();
             this.btn_AggInvent = new System.Windows.Forms.Button();
+            this.tbx_SerieInvent = new System.Windows.Forms.TextBox();
+            this.tbx_ModeloInvent = new System.Windows.Forms.TextBox();
+            this.tbx_MarcaInvent = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbx_CantInvent = new System.Windows.Forms.TextBox();
+            this.tbx_HerraInvent = new System.Windows.Forms.TextBox();
+            this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.btn_Regresar = new System.Windows.Forms.Button();
+            this.btn_Home = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -462,6 +462,151 @@
             this.tabPage3.Text = "Inventario";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btn_Inven
+            // 
+            this.btn_Inven.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.buscar_alt;
+            this.btn_Inven.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Inven.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Inven.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Inven.Location = new System.Drawing.Point(637, 439);
+            this.btn_Inven.Name = "btn_Inven";
+            this.btn_Inven.Size = new System.Drawing.Size(80, 76);
+            this.btn_Inven.TabIndex = 28;
+            this.btn_Inven.UseVisualStyleBackColor = true;
+            this.btn_Inven.Click += new System.EventHandler(this.btn_Inven_Click);
+            // 
+            // btn_deleteInvent
+            // 
+            this.btn_deleteInvent.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.basura;
+            this.btn_deleteInvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_deleteInvent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_deleteInvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_deleteInvent.Location = new System.Drawing.Point(827, 439);
+            this.btn_deleteInvent.Name = "btn_deleteInvent";
+            this.btn_deleteInvent.Size = new System.Drawing.Size(80, 76);
+            this.btn_deleteInvent.TabIndex = 27;
+            this.btn_deleteInvent.UseVisualStyleBackColor = true;
+            this.btn_deleteInvent.Click += new System.EventHandler(this.btn_deleteInvent_Click);
+            // 
+            // btn_ModInvent
+            // 
+            this.btn_ModInvent.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.lapiz;
+            this.btn_ModInvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ModInvent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ModInvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_ModInvent.Location = new System.Drawing.Point(917, 439);
+            this.btn_ModInvent.Name = "btn_ModInvent";
+            this.btn_ModInvent.Size = new System.Drawing.Size(80, 76);
+            this.btn_ModInvent.TabIndex = 26;
+            this.btn_ModInvent.UseVisualStyleBackColor = true;
+            this.btn_ModInvent.Click += new System.EventHandler(this.btn_ModInvent_Click);
+            // 
+            // btn_ClearInvent
+            // 
+            this.btn_ClearInvent.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.circulo_cruzado;
+            this.btn_ClearInvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ClearInvent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ClearInvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_ClearInvent.Location = new System.Drawing.Point(1007, 439);
+            this.btn_ClearInvent.Name = "btn_ClearInvent";
+            this.btn_ClearInvent.Size = new System.Drawing.Size(80, 76);
+            this.btn_ClearInvent.TabIndex = 25;
+            this.btn_ClearInvent.UseVisualStyleBackColor = true;
+            this.btn_ClearInvent.Click += new System.EventHandler(this.btn_ClearInvent_Click);
+            // 
+            // btn_AggInvent
+            // 
+            this.btn_AggInvent.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.agregar_usuario;
+            this.btn_AggInvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_AggInvent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AggInvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AggInvent.Location = new System.Drawing.Point(732, 439);
+            this.btn_AggInvent.Name = "btn_AggInvent";
+            this.btn_AggInvent.Size = new System.Drawing.Size(80, 76);
+            this.btn_AggInvent.TabIndex = 24;
+            this.btn_AggInvent.UseVisualStyleBackColor = true;
+            this.btn_AggInvent.Click += new System.EventHandler(this.btn_AggInvent_Click);
+            // 
+            // tbx_SerieInvent
+            // 
+            this.tbx_SerieInvent.Location = new System.Drawing.Point(903, 42);
+            this.tbx_SerieInvent.Name = "tbx_SerieInvent";
+            this.tbx_SerieInvent.Size = new System.Drawing.Size(182, 30);
+            this.tbx_SerieInvent.TabIndex = 11;
+            // 
+            // tbx_ModeloInvent
+            // 
+            this.tbx_ModeloInvent.Location = new System.Drawing.Point(665, 42);
+            this.tbx_ModeloInvent.Name = "tbx_ModeloInvent";
+            this.tbx_ModeloInvent.Size = new System.Drawing.Size(211, 30);
+            this.tbx_ModeloInvent.TabIndex = 10;
+            // 
+            // tbx_MarcaInvent
+            // 
+            this.tbx_MarcaInvent.Location = new System.Drawing.Point(439, 42);
+            this.tbx_MarcaInvent.Name = "tbx_MarcaInvent";
+            this.tbx_MarcaInvent.Size = new System.Drawing.Size(206, 30);
+            this.tbx_MarcaInvent.TabIndex = 9;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(898, 14);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 25);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Serie";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(660, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 25);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Modelo";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(434, 14);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 25);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Marca";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(320, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 25);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Cantidad";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(118, 25);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Herramienta";
+            // 
+            // tbx_CantInvent
+            // 
+            this.tbx_CantInvent.Location = new System.Drawing.Point(320, 42);
+            this.tbx_CantInvent.Name = "tbx_CantInvent";
+            this.tbx_CantInvent.Size = new System.Drawing.Size(99, 30);
+            this.tbx_CantInvent.TabIndex = 3;
+            // 
+            // tbx_HerraInvent
+            // 
+            this.tbx_HerraInvent.Location = new System.Drawing.Point(11, 42);
+            this.tbx_HerraInvent.Name = "tbx_HerraInvent";
+            this.tbx_HerraInvent.Size = new System.Drawing.Size(293, 30);
+            this.tbx_HerraInvent.TabIndex = 2;
+            // 
             // dgvInventario
             // 
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -499,148 +644,6 @@
             this.btn_Home.TabIndex = 15;
             this.btn_Home.UseVisualStyleBackColor = false;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
-            // 
-            // tbx_HerraInvent
-            // 
-            this.tbx_HerraInvent.Location = new System.Drawing.Point(11, 42);
-            this.tbx_HerraInvent.Name = "tbx_HerraInvent";
-            this.tbx_HerraInvent.Size = new System.Drawing.Size(293, 30);
-            this.tbx_HerraInvent.TabIndex = 2;
-            // 
-            // tbx_CantInvent
-            // 
-            this.tbx_CantInvent.Location = new System.Drawing.Point(320, 42);
-            this.tbx_CantInvent.Name = "tbx_CantInvent";
-            this.tbx_CantInvent.Size = new System.Drawing.Size(99, 30);
-            this.tbx_CantInvent.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 14);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 25);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Herramienta";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(320, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 25);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Cantidad";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(434, 14);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 25);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Marca";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(660, 14);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 25);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Modelo";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(898, 14);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 25);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "Serie";
-            // 
-            // tbx_MarcaInvent
-            // 
-            this.tbx_MarcaInvent.Location = new System.Drawing.Point(439, 42);
-            this.tbx_MarcaInvent.Name = "tbx_MarcaInvent";
-            this.tbx_MarcaInvent.Size = new System.Drawing.Size(206, 30);
-            this.tbx_MarcaInvent.TabIndex = 9;
-            // 
-            // tbx_ModeloInvent
-            // 
-            this.tbx_ModeloInvent.Location = new System.Drawing.Point(665, 42);
-            this.tbx_ModeloInvent.Name = "tbx_ModeloInvent";
-            this.tbx_ModeloInvent.Size = new System.Drawing.Size(211, 30);
-            this.tbx_ModeloInvent.TabIndex = 10;
-            // 
-            // tbx_SerieInvent
-            // 
-            this.tbx_SerieInvent.Location = new System.Drawing.Point(903, 42);
-            this.tbx_SerieInvent.Name = "tbx_SerieInvent";
-            this.tbx_SerieInvent.Size = new System.Drawing.Size(182, 30);
-            this.tbx_SerieInvent.TabIndex = 11;
-            // 
-            // btn_Inven
-            // 
-            this.btn_Inven.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.buscar_alt;
-            this.btn_Inven.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Inven.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Inven.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Inven.Location = new System.Drawing.Point(637, 439);
-            this.btn_Inven.Name = "btn_Inven";
-            this.btn_Inven.Size = new System.Drawing.Size(80, 76);
-            this.btn_Inven.TabIndex = 28;
-            this.btn_Inven.UseVisualStyleBackColor = true;
-            this.btn_Inven.Click += new System.EventHandler(this.btn_Inven_Click);
-            // 
-            // btn_deleteInvent
-            // 
-            this.btn_deleteInvent.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.basura;
-            this.btn_deleteInvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_deleteInvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_deleteInvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_deleteInvent.Location = new System.Drawing.Point(827, 439);
-            this.btn_deleteInvent.Name = "btn_deleteInvent";
-            this.btn_deleteInvent.Size = new System.Drawing.Size(80, 76);
-            this.btn_deleteInvent.TabIndex = 27;
-            this.btn_deleteInvent.UseVisualStyleBackColor = true;
-            // 
-            // btn_ModInvent
-            // 
-            this.btn_ModInvent.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.lapiz;
-            this.btn_ModInvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ModInvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ModInvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_ModInvent.Location = new System.Drawing.Point(917, 439);
-            this.btn_ModInvent.Name = "btn_ModInvent";
-            this.btn_ModInvent.Size = new System.Drawing.Size(80, 76);
-            this.btn_ModInvent.TabIndex = 26;
-            this.btn_ModInvent.UseVisualStyleBackColor = true;
-            // 
-            // btn_ClearInvent
-            // 
-            this.btn_ClearInvent.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.circulo_cruzado;
-            this.btn_ClearInvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ClearInvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ClearInvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_ClearInvent.Location = new System.Drawing.Point(1007, 439);
-            this.btn_ClearInvent.Name = "btn_ClearInvent";
-            this.btn_ClearInvent.Size = new System.Drawing.Size(80, 76);
-            this.btn_ClearInvent.TabIndex = 25;
-            this.btn_ClearInvent.UseVisualStyleBackColor = true;
-            this.btn_ClearInvent.Click += new System.EventHandler(this.btn_ClearInvent_Click);
-            // 
-            // btn_AggInvent
-            // 
-            this.btn_AggInvent.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.agregar_usuario;
-            this.btn_AggInvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_AggInvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AggInvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_AggInvent.Location = new System.Drawing.Point(732, 439);
-            this.btn_AggInvent.Name = "btn_AggInvent";
-            this.btn_AggInvent.Size = new System.Drawing.Size(80, 76);
-            this.btn_AggInvent.TabIndex = 24;
-            this.btn_AggInvent.UseVisualStyleBackColor = true;
             // 
             // Agg_Usuarios
             // 

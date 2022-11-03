@@ -271,6 +271,44 @@ namespace Proyecto_Labs_BDD
 
         private void btn_Inven_Click(object sender, EventArgs e)
         {
+            //Busqueda sql
+            if (tbx_HerraInvent.Text != "")
+            {
+                sql.SearchInvent(tbx_HerraInvent.Text, "Descripcion");
+            }
+            else if (tbx_ModeloInvent.Text != "")
+            {
+                sql.SearchInvent(tbx_ModeloInvent.Text, "Modelo");
+            }
+            else if (tbx_MarcaInvent.Text != "")
+            {
+                sql.SearchInvent(tbx_MarcaInvent.Text, "Marca");
+            }
+            else if (tbx_SerieInvent.Text != "")
+            {
+                sql.SearchInvent(tbx_SerieInvent.Text, "Serie");
+            }
+            else
+            {
+                MessageBox.Show("Tiene que rellenar el campo que desee buscar");
+            }
+            LoadandClear();
+        }
+
+        private void btn_AggInvent_Click(object sender, EventArgs e)
+        {
+            if(tbx_CantInvent.Text != "" && tbx_ModeloInvent.Text != "" && tbx_SerieInvent.Text != "" && tbx_HerraInvent.Text != "")
+            { sql.AddInvent(tbx_HerraInvent.Text, Convert.ToInt32(tbx_CantInvent.Text), tbx_MarcaInvent.Text, tbx_ModeloInvent.Text, tbx_SerieInvent.Text); }
+            LoadandClear();
+        }
+
+        private void btn_deleteInvent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ModInvent_Click(object sender, EventArgs e)
+        {
 
         }
     }

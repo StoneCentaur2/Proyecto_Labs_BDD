@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -277,6 +278,29 @@ namespace Proyecto_Labs_BDD
                 catch (Exception ex) { Mss = "Error de ingreso, \n Tipo: " + ex.ToString(); throw; }
             }
             catch (Exception ex) { Mss = "Error de al modificar inventario, \n Tipo: " + ex.ToString(); throw; }
+            return Mss;
+        }
+        public DataTable SearchInvent(string ID, string column)
+        {
+            try
+            {
+                cmd = new MySqlCommand("select * from inventario where "+column+" = '"+ID+"' and Laboratorio = '"+Propiedades.Carrera_Usua+"';",cn);
+                MySqlDataAdapter ch = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ch.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex){ MessageBox.Show("Error en la busqueda en inventario \n Tipo: " + ex.ToString()); throw; }
+        }
+        public string AddInvent(string Descripcion, int Cantidad, string Marca, string Modelo,string Serie)
+        {
+            string Mss = "Se elimino correctamente";
+            try
+            {
+                cmd = new MySqlCommand("insert into inventario values(0, '"+Descripcion+"',"+Cantidad+",'"+Marca+"','"+Modelo+"','"+Serie+"', '" + Propiedades.Carrera_Usua + "';", cn);//eliminación por busqueda
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { Mss = "Error de al eliminar. \n Tipo: " + ex.ToString(); throw; }
             return Mss;
         }
     }
