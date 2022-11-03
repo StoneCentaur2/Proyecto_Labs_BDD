@@ -117,25 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Necesita codificar para que pueda hacer busqueda y eliminación
-busqueda de prestamo, ya sea por ID, Descripcion, nombre o docente
-Eliminación de prestamo por cualquiera de los mismos de arriba
-La eliminación debe mandar mensaje que diga "Entregado"
-Al eliminar un prestamo debe aumentar la "Cantidad" en 
-la tabla de inventarios
-</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Agregar otro CRUD
-Recomiendo usar ejemplo de la primera página
-PD: AL TERMINAR BORRAR ESTOS LABELS
-Para este punto del programa los querys del SQL se duplican y/o
-se modifican, suerte, según yo no es tan dificil de entender para ti
-algunas cosas tendrán comentarios porque los vi necesarios
-
-</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_Regresar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

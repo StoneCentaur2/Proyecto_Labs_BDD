@@ -87,8 +87,8 @@ namespace Proyecto_Labs_BDD
 
         private void btn_Agg_Click(object sender, EventArgs e)
         {
-            sql.IDherramienta(tbx_Solicitud.Text);
-            MessageBox.Show(sql.Solicitudes(tbx_Solicitud.Text, cmbx_Docente.Text));
+            sql.IDherramienta("Descripcion",tbx_Solicitud.Text);
+            sql.Solicitudes(tbx_Solicitud.Text, cmbx_Docente.Text);
             dataGridView1.DataSource = sql.CargarInventario();
         }
     }

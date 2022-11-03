@@ -153,10 +153,10 @@ namespace Proyecto_Labs_BDD
         }
         public string Solicitudes(string Herramienta, string Docente)
         {
-            string Mss = "Se solicito";
+            string Mss = "Elemento solicitado correctamente";
             try
             {
-                cmd = new MySqlCommand("UPDATE inventario SET Cantidad = (Cantidad - 1) WHERE ID = "+Propiedades.IDHerramientas+";",cn);
+                cmd = new MySqlCommand("UPDATE inventario SET Cantidad = (Cantidad - 1) WHERE ID = "+Propiedades.IDHerramientas+ " and Laboratorio = '"+Propiedades.Carrera_Usua+"';", cn);
                 cmd.ExecuteNonQuery();
                 try
                 {
@@ -168,12 +168,13 @@ namespace Proyecto_Labs_BDD
             catch (Exception ex) { Mss = "Error de al modificar inventario, \n Tipo: " + ex.ToString(); throw; }
             return Mss;
         }
-        public int IDherramienta(string Herramienta)
+        public int IDherramienta(string ID,string Herramienta)//Selecciona la celda de la herramienta a buscar
         {
             int contador;
             try
             {
-                cmd = new MySqlCommand("select substring_index(ID, ',', 2) from inventario where Descripcion = '"+Herramienta+"';", cn);//Busca exactamente una celda
+                cmd = new MySqlCommand("select substring_index(ID, ',', 2) from inventario where " +
+                    ""+ID+" = '"+Herramienta+ "' and Laboratorio = '" + Propiedades.Carrera_Usua+"';", cn);//Busca exactamente una celda ahora busca el ID
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -181,7 +182,7 @@ namespace Proyecto_Labs_BDD
                 }
                 dr.Close();
             }
-            catch (Exception ex) { MessageBox.Show("Error con la consulta Teachers" + " \n Tipo: " + ex.ToString()); }
+            catch (Exception ex) { MessageBox.Show("Error con la consulta Herramientas" + " \n Tipo: " + ex.ToString()); }
             return contador = Propiedades.IDHerramientas;
         }
         public string AddUsers(int ID, string Passwrd, string Name, int Encargado, int Teacher)
@@ -228,6 +229,55 @@ namespace Proyecto_Labs_BDD
                 return dt;
             }
             catch (Exception ex) {MessageBox.Show("Error de al buscar el usuario, \n Tipo: " + ex.ToString()); throw; }
+        }
+        public DataTable SearchPrestamo(string ID, string Search)
+        {
+            try
+            {
+                cmd = new MySqlCommand("select * from herramienta WHERE " + Search + " = '" + ID + "' and Carrera = '" + Propiedades.Carrera_Usua + "';", cn);//Actualiza especificamente un lugar
+                MySqlDataAdapter ch = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ch.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex) { MessageBox.Show("Error de al buscar el prestamo, \n Tipo: " + ex.ToString()); throw; }
+        }
+        public string DeletePrestamo(string IDPresTable,string IDPresDate)
+        {
+            string Mss = "Se solicito";
+            try
+            {
+                cmd = new MySqlCommand("UPDATE inventario SET Cantidad = (Cantidad + 1) WHERE ID = '" + Propiedades.IDHerramientas
+                    + "' and Laboratorio = '" + Propiedades.Carrera_Usua+"';", cn);
+                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd = new MySqlCommand("delete from herramienta where " + IDPresTable + " = '" + IDPresDate + "' and Carrera = '" + Propiedades.Carrera_Usua + "';", cn);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex) { Mss = "Error de ingreso, \n Tipo: " + ex.ToString(); throw; }
+            }
+            catch (Exception ex) { Mss = "Error de al modificar inventario, \n Tipo: " + ex.ToString(); throw; }
+            return Mss;
+        }
+        public string DeletePresForName(string IDPresTable, string IDPresDate,string columnHerra, string ID)
+        {
+            string Mss = "Se elimino correctamente";
+            try
+            {
+                cmd = new MySqlCommand("UPDATE inventario SET Cantidad = (Cantidad + 1) WHERE ID = '" + Propiedades.IDHerramientas
+                    + "' and Laboratorio = '" + Propiedades.Carrera_Usua + "';", cn);
+                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd = new MySqlCommand("delete from herramienta where " + IDPresTable + " = '" + IDPresDate + "' and "+columnHerra+" = '"+ID+"'" +
+                        " and Carrera = '" + Propiedades.Carrera_Usua + "';", cn);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex) { Mss = "Error de ingreso, \n Tipo: " + ex.ToString(); throw; }
+            }
+            catch (Exception ex) { Mss = "Error de al modificar inventario, \n Tipo: " + ex.ToString(); throw; }
+            return Mss;
         }
     }
 }

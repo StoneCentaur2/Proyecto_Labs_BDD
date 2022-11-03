@@ -21,6 +21,30 @@ namespace Proyecto_Labs_BDD
             cmb_DocentePres.Items.Add(Propiedades.Teacher_Usua3);
             cmb_DocentePres.Items.Add(Propiedades.Teacher_Usua1);
         }
+        private void LoadandClear() //Metodo para cargar tablas y limpiar contenido
+        {
+            //Page 1
+            tbx_Nom.Text = "";
+            tbx_ID.Text = "";
+            tbx_Contraseña.Text = "";
+            cmb_Docente.Text = null;
+            cmb_Encargado.Text = null;
+            //Page 2
+            tbx_DescrPres.Text = "";
+            tbx_IDPres.Text = "";
+            tbx_NamePres.Text = "";
+            cmb_DocentePres.Text = null;
+            //Page 3
+            tbx_CantInvent.Text = "";
+            tbx_HerraInvent.Text = "";
+            tbx_MarcaInvent.Text = "";
+            tbx_ModeloInvent.Text = "";
+            tbx_SerieInvent.Text = "";
+            
+            dgvInventario.DataSource = sql.CargarInventario();
+            dgvUsuarios.DataSource = sql.CargarUsuarios();
+            dgvPrestamos.DataSource = sql.CargarHerramientas();
+        }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -29,9 +53,7 @@ namespace Proyecto_Labs_BDD
 
         private void Agg_Usuarios_Load(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = sql.CargarInventario();
-            dataGridView1.DataSource = sql.CargarUsuarios();
-            dataGridView3.DataSource = sql.CargarHerramientas();
+            LoadandClear();
         }
 
         private void btn_Regresar_Click(object sender, EventArgs e)
@@ -58,49 +80,35 @@ namespace Proyecto_Labs_BDD
             {
                 MessageBox.Show("Favor de rellenar todos los espacios para agregar");
             }
-            cmb_Docente.Text = null;
-            cmb_Encargado.Text = null;
-            dataGridView1.DataSource = sql.CargarUsuarios();
-            tbx_Nom.Text = "";
-            tbx_ID.Text = "";
-            tbx_Contraseña.Text = "";
+            LoadandClear();
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            tbx_Nom.Text = "";
-            tbx_ID.Text = "";
-            tbx_Contraseña.Text = "";
-            cmb_Docente.Text = null;
-            cmb_Encargado.Text = null;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (tbx_ID.Text == "")//Busqueda por nombre
             {
-                dataGridView1.DataSource = sql.SearchUsers(tbx_Nom.Text, "Nombre");
+                dgvUsuarios.DataSource = sql.SearchUsers(tbx_Nom.Text, "Nombre");
             }
             else if (tbx_Nom.Text == "")//Busqueda por ID
             {
-                dataGridView1.DataSource = sql.SearchUsers(tbx_ID.Text, "ID");
+                dgvUsuarios.DataSource = sql.SearchUsers(tbx_ID.Text, "ID");
             }
             else
             {
                 MessageBox.Show("Rellene el campo por el cual desea buscar al usuario \n" +
                     "Ingrese en el campo ID o Por nombre");
             }
-            tbx_Nom.Text = "";
-            tbx_ID.Text = "";
-            tbx_Contraseña.Text = "";
-            cmb_Docente.Text = null;
-            cmb_Encargado.Text = null;
-            tbx_Contraseña.Text = "";
+            LoadandClear();
         }
 
         private void btn_ModUser_Click(object sender, EventArgs e)
         {
-            //coamndo sql
+            //coamndo sql, comparaciones para el poder modificar dependiendo que este rellenado
             if (tbx_Nom.Text == "" && cmb_Encargado.Text == "" && cmb_Docente.Text == "")
             {
                 if (tbx_ID.Text == "")
@@ -110,7 +118,7 @@ namespace Proyecto_Labs_BDD
                 else
                 {
                     MessageBox.Show(sql.ModUsers(Convert.ToInt32(tbx_ID.Text), tbx_Contraseña.Text, "Contraseña"));
-                    dataGridView1.DataSource = sql.CargarUsuarios();
+                    dgvUsuarios.DataSource = sql.CargarUsuarios();
                 }
             }
             else if (tbx_Contraseña.Text == "" && cmb_Encargado.Text == "" && cmb_Docente.Text == "")
@@ -122,7 +130,7 @@ namespace Proyecto_Labs_BDD
                 else
                 {
                     MessageBox.Show(sql.ModUsers(Convert.ToInt32(tbx_ID.Text), tbx_Nom.Text, "Nombre"));
-                    dataGridView1.DataSource = sql.CargarUsuarios();
+                    dgvUsuarios.DataSource = sql.CargarUsuarios();
                 }
             }
             else if (tbx_Contraseña.Text == "" && tbx_Nom.Text == "" && cmb_Encargado.Text == "")
@@ -134,7 +142,7 @@ namespace Proyecto_Labs_BDD
                 else
                 {
                     MessageBox.Show(sql.ModUsers(Convert.ToInt32(tbx_ID.Text), cmb_Docente.Text, "Docente"));
-                    dataGridView1.DataSource = sql.CargarUsuarios();
+                    dgvUsuarios.DataSource = sql.CargarUsuarios();
                 }
             }
             else if (tbx_Contraseña.Text == "" && tbx_Nom.Text == "" && cmb_Docente.Text == "")
@@ -146,7 +154,7 @@ namespace Proyecto_Labs_BDD
                 else
                 {
                     MessageBox.Show(sql.ModUsers(Convert.ToInt32(tbx_ID.Text), cmb_Encargado.Text, "Encargado"));
-                    dataGridView1.DataSource = sql.CargarUsuarios();
+                    dgvUsuarios.DataSource = sql.CargarUsuarios();
                 }
             }
             else if (tbx_Nom.Text != "" && tbx_ID.Text != "" && tbx_Contraseña.Text != "" && cmb_Docente.Text != "" && cmb_Encargado.Text != "")
@@ -157,12 +165,7 @@ namespace Proyecto_Labs_BDD
             {
                 MessageBox.Show("No se ingreso correctamente para modificar");
             }
-            //Borrado de contenido
-            tbx_Nom.Text = "";
-            tbx_ID.Text = "";
-            tbx_Contraseña.Text = "";
-            cmb_Docente.Text = null;
-            cmb_Encargado.Text = null;
+            LoadandClear();
         }
 
         private void btn_EliminateUser_Click(object sender, EventArgs e)
@@ -170,17 +173,105 @@ namespace Proyecto_Labs_BDD
             if(tbx_ID.Text != "")
             {
                 sql.DeleteUser(Convert.ToInt32(tbx_ID.Text));
-                dataGridView1.DataSource = sql.CargarUsuarios();
+                dgvUsuarios.DataSource = sql.CargarUsuarios();
             }
             else
             {
                 MessageBox.Show("Necesita rellenar el ID para poder eliminar");
             }
-            //Para dejar en blanco despues del comando
-            tbx_ID.Text = ""; tbx_Nom.Text = "";
-            tbx_Contraseña.Text = "";
-            cmb_Docente.Text = null;
-            cmb_Encargado.Text = null;
+            LoadandClear();
+        }
+
+        private void btn_SearchPrestamo_Click(object sender, EventArgs e)
+        {
+            if (tbx_IDPres.Text != "" && tbx_DescrPres.Text == "" && cmb_DocentePres.Text == "" && tbx_NamePres.Text == "")
+            {
+              dgvPrestamos.DataSource = sql.SearchPrestamo(tbx_IDPres.Text, "ID");
+            }
+            else if(tbx_NamePres.Text != "" && tbx_DescrPres.Text == "" && cmb_DocentePres.Text == "" && tbx_IDPres.Text == "")
+            {
+                dgvPrestamos.DataSource = sql.SearchPrestamo(tbx_NamePres.Text, "Nombre");
+            }
+            else if (tbx_DescrPres.Text != "" && tbx_NamePres.Text == "" && cmb_DocentePres.Text == "" && tbx_IDPres.Text == "")
+            {
+                dgvPrestamos.DataSource = sql.SearchPrestamo(tbx_DescrPres.Text, "Herramienta");
+            }
+            else if (cmb_DocentePres.Text != "" && tbx_DescrPres.Text == "" && tbx_NamePres.Text == "" && tbx_IDPres.Text == "")
+            {
+                dgvPrestamos.DataSource = sql.SearchPrestamo(cmb_DocentePres.Text, "Docente");
+            }
+            else
+            {
+                MessageBox.Show("Rellenar solo el espacio por el cual desea buscar");
+            }
+            //Para que no limpie sin ver el resultado
+            tbx_DescrPres.Text = "";
+            tbx_IDPres.Text = "";
+            tbx_NamePres.Text = "";
+            cmb_DocentePres.Text = null;
+        }
+
+        private void btn_Devuelto_Click(object sender, EventArgs e)
+        {
+            if (tbx_IDPres.Text != "" && tbx_DescrPres.Text == "" && cmb_DocentePres.Text == "" && tbx_NamePres.Text == "")
+            {
+                sql.IDherramienta("ID", tbx_IDPres.Text);//Devolución por solo ID
+                 sql.DeletePrestamo("ID", tbx_IDPres.Text);
+            }
+            else if (tbx_NamePres.Text != "" && cmb_DocentePres.Text == "")
+            {
+                if (tbx_IDPres.Text != "")
+                {
+                    sql.IDherramienta("ID", tbx_IDPres.Text);// Devolución por ID y Nombre del solicitante
+                     sql.DeletePresForName("ID", tbx_IDPres.Text,"Nombre", tbx_NamePres.Text);
+                }
+                else if(tbx_DescrPres.Text != "")
+                {
+                    sql.IDherramienta("Descripcion", tbx_DescrPres.Text);// Devolución por descripción y nombre del solicitante
+                     sql.DeletePresForName("Herramienta", tbx_DescrPres.Text,"Nombre", tbx_NamePres.Text);
+                }
+                else { // Mensaje por solo colocar el nombre 
+                    MessageBox.Show("No es posible devolver tu articulo con solo nombre \n Necesita ingresar el ID o Nombre del articulo");
+                } 
+            }
+            else if (tbx_DescrPres.Text != "" && tbx_NamePres.Text == "" && cmb_DocentePres.Text == "" && tbx_IDPres.Text == "")
+            {
+                sql.IDherramienta("Descripcion", tbx_DescrPres.Text); // Devolución por solo Descripción
+                 sql.DeletePrestamo("Herramienta", tbx_DescrPres.Text);
+            }
+            else if (cmb_DocentePres.Text != "" && tbx_NamePres.Text == "")
+            {
+                if (tbx_IDPres.Text != "")
+                {
+                    sql.IDherramienta("ID", tbx_IDPres.Text); // Devolución por ID y docente encargado
+                     sql.DeletePresForName("ID", tbx_IDPres.Text,"Docente", cmb_DocentePres.Text);
+                }
+                else if (tbx_DescrPres.Text != "")
+                {
+                    sql.IDherramienta("Descripcion", tbx_DescrPres.Text); // Devolución por Descripción y docente encargado
+                     sql.DeletePresForName("Herramienta", tbx_DescrPres.Text, "Docente", cmb_DocentePres.Text);
+                }
+                else // Mensaje de que debe rellenar más que solo el docente
+                {
+                    MessageBox.Show("No es posible devolver tu articulo con solo el docente \n Necesita ingresar el ID o Nombre del articulo");
+                }
+            }
+            else // Mensaje de que no relleno nada
+            {
+                MessageBox.Show("Rellenar correctamente los espacios");
+            }
+            //Volver a cargar las tablas y limpiar espacios
+            LoadandClear();
+        }
+
+        private void btn_ClearInvent_Click(object sender, EventArgs e)
+        {
+            LoadandClear();
+        }
+
+        private void btn_Inven_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

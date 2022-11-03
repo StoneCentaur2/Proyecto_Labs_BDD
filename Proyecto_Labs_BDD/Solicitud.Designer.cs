@@ -108,7 +108,7 @@
             this.btn_Borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Borrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Borrar.Location = new System.Drawing.Point(785, 448);
+            this.btn_Borrar.Location = new System.Drawing.Point(882, 448);
             this.btn_Borrar.Name = "btn_Borrar";
             this.btn_Borrar.Size = new System.Drawing.Size(80, 76);
             this.btn_Borrar.TabIndex = 9;
@@ -148,7 +148,7 @@
             this.btn_Agg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Agg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Agg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Agg.Location = new System.Drawing.Point(881, 448);
+            this.btn_Agg.Location = new System.Drawing.Point(786, 448);
             this.btn_Agg.Name = "btn_Agg";
             this.btn_Agg.Size = new System.Drawing.Size(80, 76);
             this.btn_Agg.TabIndex = 0;
