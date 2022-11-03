@@ -62,33 +62,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(18, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 29);
+            this.label1.Size = new System.Drawing.Size(251, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "Herramienta a solicitar";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(342, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 29);
+            this.label2.Size = new System.Drawing.Size(211, 23);
             this.label2.TabIndex = 8;
             this.label2.Text = "Docente encargado";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(801, 22);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Lucida Sans Unicode", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(749, 11);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(256, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(308, 27);
             this.dateTimePicker1.TabIndex = 10;
             this.dateTimePicker1.Value = new System.DateTime(2022, 10, 31, 10, 8, 59, 0);
             // 
@@ -104,6 +106,7 @@
             // 
             // btn_Borrar
             // 
+            this.btn_Borrar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Borrar.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.circulo_cruzado;
             this.btn_Borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Borrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -112,25 +115,28 @@
             this.btn_Borrar.Name = "btn_Borrar";
             this.btn_Borrar.Size = new System.Drawing.Size(80, 76);
             this.btn_Borrar.TabIndex = 9;
-            this.btn_Borrar.UseVisualStyleBackColor = true;
+            this.btn_Borrar.UseVisualStyleBackColor = false;
             this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
             // 
             // btn_agg_Usuario
             // 
+            this.btn_agg_Usuario.BackColor = System.Drawing.Color.Transparent;
             this.btn_agg_Usuario.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.menu_puntos_vertical;
             this.btn_agg_Usuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_agg_Usuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_agg_Usuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_agg_Usuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_agg_Usuario.Location = new System.Drawing.Point(690, 448);
             this.btn_agg_Usuario.Name = "btn_agg_Usuario";
             this.btn_agg_Usuario.Size = new System.Drawing.Size(80, 76);
             this.btn_agg_Usuario.TabIndex = 2;
-            this.btn_agg_Usuario.UseVisualStyleBackColor = true;
+            this.btn_agg_Usuario.UseVisualStyleBackColor = false;
             this.btn_agg_Usuario.Visible = false;
             this.btn_agg_Usuario.Click += new System.EventHandler(this.btn_agg_Usuario_Click);
             // 
             // btn_Home
             // 
+            this.btn_Home.BackColor = System.Drawing.Color.Transparent;
             this.btn_Home.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.casa;
             this.btn_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Home.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -139,11 +145,12 @@
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(80, 76);
             this.btn_Home.TabIndex = 1;
-            this.btn_Home.UseVisualStyleBackColor = true;
+            this.btn_Home.UseVisualStyleBackColor = false;
             this.btn_Home.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Agg
             // 
+            this.btn_Agg.BackColor = System.Drawing.Color.Transparent;
             this.btn_Agg.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.agregar;
             this.btn_Agg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Agg.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -152,7 +159,7 @@
             this.btn_Agg.Name = "btn_Agg";
             this.btn_Agg.Size = new System.Drawing.Size(80, 76);
             this.btn_Agg.TabIndex = 0;
-            this.btn_Agg.UseVisualStyleBackColor = true;
+            this.btn_Agg.UseVisualStyleBackColor = false;
             this.btn_Agg.Click += new System.EventHandler(this.btn_Agg_Click);
             // 
             // Solicitud
@@ -160,6 +167,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.MicrosoftTeams_image__3_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1069, 536);
             this.Controls.Add(this.cmbx_Docente);
             this.Controls.Add(this.dateTimePicker1);

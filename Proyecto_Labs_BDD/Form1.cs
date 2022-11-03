@@ -16,6 +16,7 @@ namespace Proyecto_Labs_BDD
         public Login()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
@@ -44,6 +45,16 @@ namespace Proyecto_Labs_BDD
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

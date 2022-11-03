@@ -190,7 +190,7 @@ namespace Proyecto_Labs_BDD
         {
             string Mss = "Se ingreso el nuevo usuario";
             try
-            {
+            { 
                 cmd = new MySqlCommand("insert into usuarios values("+ID+", '"+Passwrd+"', '"+ Propiedades.Carrera_Usua + "', '"+Name+"', "+Encargado+", "+Teacher+");",cn);
                 cmd.ExecuteNonQuery();
             }

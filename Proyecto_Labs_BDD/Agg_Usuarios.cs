@@ -17,6 +17,7 @@ namespace Proyecto_Labs_BDD
         public Agg_Usuarios()
         {
             InitializeComponent();
+            this.CenterToScreen();
             cmb_DocentePres.Items.Add(Propiedades.Teacher_Usua2);
             cmb_DocentePres.Items.Add(Propiedades.Teacher_Usua3);
             cmb_DocentePres.Items.Add(Propiedades.Teacher_Usua1);

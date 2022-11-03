@@ -18,6 +18,7 @@ namespace Proyecto_Labs_BDD
         public Solicitud()
         {
             InitializeComponent();
+            this.CenterToScreen();
             if (sql.BuscarEncargado(Propiedades.ID_Usuario,1) == 1)
             {
                 btn_agg_Usuario.Visible = true;
