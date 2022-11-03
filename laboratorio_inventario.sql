@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `inventario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `inventario` (
-  `ID` int NOT NULL,
+  `ID` int NOT NULL AUTO_INCREMENT,
   `Descripcion` char(85) NOT NULL,
   `Cantidad` int NOT NULL,
   `Marca` char(20) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE `inventario` (
   `Serie` char(25) DEFAULT NULL,
   `Laboratorio` char(65) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `inventario` (
 
 LOCK TABLES `inventario` WRITE;
 /*!40000 ALTER TABLE `inventario` DISABLE KEYS */;
-INSERT INTO `inventario` VALUES (2,'Sierra caladora',1,'SKILL','4230','F012430AA','ing. civil'),(6,'cincel',1,'STANLEY','','','ing. industrial'),(12,'Router inalambrico',2,'TP-Link','TL-WR840N','','ing. en sistemas computacionales'),(42,'resistencia de 1 wat de 15k',50,'S/M','','','ing. civil');
+INSERT INTO `inventario` VALUES (2,'Sierra caladora',1,'SKILL','4230','F012430AA','ing. civil'),(6,'cincel',1,'STANLEY','','','ing. industrial'),(12,'Router inalambrico',0,'TP-Link','TL-WR840N','','ing. en sistemas computacionales'),(42,'resistencia de 1 wat de 15k',50,'S/M','','','ing. civil');
 /*!40000 ALTER TABLE `inventario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-01 11:34:20
+-- Dump completed on 2022-11-03  1:09:10

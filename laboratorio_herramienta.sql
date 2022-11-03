@@ -23,13 +23,14 @@ DROP TABLE IF EXISTS `herramienta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `herramienta` (
-  `ID` int NOT NULL,
+  `ID` int NOT NULL AUTO_INCREMENT,
   `Herramienta` char(85) NOT NULL,
   `Nombre` char(45) NOT NULL,
   `Docente` char(45) NOT NULL,
-  `Fecha` char(85) DEFAULT NULL,
+  `Fecha` char(85) NOT NULL,
+  `Carrera` varchar(85) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +39,7 @@ CREATE TABLE `herramienta` (
 
 LOCK TABLES `herramienta` WRITE;
 /*!40000 ALTER TABLE `herramienta` DISABLE KEYS */;
-INSERT INTO `herramienta` VALUES (4,'Pinza','Jesus','Jose Maria','31/10/2022'),(5,'Pinza','Jesus','','31/10/2022'),(6,'Pinza','Jesus','','31/10/2022 10:08 a. m.'),(6629639,'arduino','Orlando Mejia','José María Gerónimo Pérez','lunes, 31 de octubre de 2022');
+INSERT INTO `herramienta` VALUES (1,'Router inalambrico','Fernanda','José María Gerónimo Pérez','31/10/2022 10:08:59 a. m.','ing. en sistemas computacionales'),(2,'Router inalambrico','Fernanda','José María Gerónimo Pérez','31/10/2022 10:08:59 a. m.','ing. en sistemas computacionales');
 /*!40000 ALTER TABLE `herramienta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-01 11:34:20
+-- Dump completed on 2022-11-03  1:09:10
