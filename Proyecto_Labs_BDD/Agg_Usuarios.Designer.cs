@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agg_Usuarios));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_SearchUsers = new System.Windows.Forms.Button();
@@ -620,7 +619,7 @@
             // btn_Regresar
             // 
             this.btn_Regresar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Regresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Regresar.BackgroundImage")));
+            this.btn_Regresar.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.registrarse;
             this.btn_Regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -634,7 +633,7 @@
             // btn_Home
             // 
             this.btn_Home.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Home.BackgroundImage")));
+            this.btn_Home.BackgroundImage = global::Proyecto_Labs_BDD.Properties.Resources.casa;
             this.btn_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Home.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
