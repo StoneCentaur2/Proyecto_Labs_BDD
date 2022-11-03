@@ -30,19 +30,25 @@ namespace Proyecto_Labs_BDD
             if (sql.EncargadoAcceso("ing. en sistemas computacionales") == 1)
             {
                 Propiedades.Carrera_Usua = "ing. en sistemas computacionales";
+                cmbx_Docente.Items.Add("José María Gerónimo Pérez");
+                cmbx_Docente.Items.Add("Diana Elizabeth López Chacon");
+                cmbx_Docente.Items.Add(sql.Teachers());
             }
             if (sql.EncargadoAcceso("ing. civil") == 1)
             {
                 Propiedades.Carrera_Usua = "ing. civil";
+                cmbx_Docente.Items.Add("Daniel Escalante Jiménez");
+                cmbx_Docente.Items.Add("Everardo Flores Ortiz");
+                cmbx_Docente.Items.Add(sql.Teachers());
             }
             if (sql.EncargadoAcceso("ing. industrial") == 1)
             {
                 Propiedades.Carrera_Usua = "ing. industrial";
+                cmbx_Docente.Items.Add("Jezaharel Rocio Ibarra"); 
+                cmbx_Docente.Items.Add("Jorge Ibarra Soto");
+                cmbx_Docente.Items.Add(sql.Teachers());
             }
-            sql.Teachers();
-            cmbx_Docente.Items.Add(Propiedades.Teacher_Usua1+
-                                   Propiedades.Teacher_Usua2+
-                                   Propiedades.Teacher_Usua3);
+            Propiedades.Time = dateTimePicker1.Value;
             sql.NameUsu(Propiedades.ID_Usuario);
             Login login = new Login();
             login.Close();
@@ -64,8 +70,7 @@ namespace Proyecto_Labs_BDD
 
         private void Solicitud_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = sql.CargarHerramientas();//Se carga el query realizado en SQL en el datagridviewif (sql.EncargadoAcceso("ing. en sistemas computacionales",Propiedades.Encargado) == 1)
-
+            dataGridView1.DataSource = sql.CargarInventario();//Se carga el query realizado en SQL en el datagridviewif (sql.EncargadoAcceso("ing. en sistemas computacionales",Propiedades.Encargado) == 1)
         }
 
         private void btn_Borrar_Click(object sender, EventArgs e)
@@ -76,9 +81,9 @@ namespace Proyecto_Labs_BDD
 
         private void btn_Agg_Click(object sender, EventArgs e)
         {
-            Random ran = new Random();
-            MessageBox.Show(sql.Solicitudes(Convert.ToInt32(ran.Next(10000, 10000001)),tbx_Solicitud.Text, Propiedades.Nombre_Usuario, cmbx_Docente.Text, dateTimePicker1.Text));
-            dataGridView1.DataSource = sql.CargarHerramientas();
+            sql.IDherramienta(tbx_Solicitud.Text);
+            MessageBox.Show(sql.Solicitudes(tbx_Solicitud.Text, cmbx_Docente.Text));
+            dataGridView1.DataSource = sql.CargarInventario();
         }
     }
 }

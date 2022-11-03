@@ -13,8 +13,6 @@ namespace Proyecto_Labs_BDD
 {
     class SQL
     {
-        public string[] Array_Teachers = new string[5];
-
         //Tipo de usuario, se asigna en Login
         public string user = "";
         readonly MySqlConnection cn;
@@ -72,13 +70,11 @@ namespace Proyecto_Labs_BDD
             string contador;
             try
             {
-                    cmd = new MySqlCommand("select substring_index(Nombre, ',', 1) from usuarios where Maestro = 1 and Carrera = '"+Propiedades.Carrera_Usua+"';", cn);
+                    cmd = new MySqlCommand("select substring_index(Nombre, ',', 1) from usuarios where Docente = 1 and Carrera = '"+Propiedades.Carrera_Usua+"';", cn);
                     dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                     Propiedades.Teacher_Usua1 = dr.GetString(0);
-                    Propiedades.Teacher_Usua2 = dr.GetString(1);
-                    Propiedades.Teacher_Usua3 = dr.GetString(2);
                 }
                     dr.Close();
                 contador = Propiedades.Teacher_Usua1;
@@ -106,7 +102,7 @@ namespace Proyecto_Labs_BDD
         {
             try
             {
-                string query = "select * from herramienta;";
+                string query = "select * from herramienta where Carrera = '"+Propiedades.Carrera_Usua+"';";
                 MySqlDataAdapter CH = new MySqlDataAdapter(query, cn);//Realiza el query y abre la conexión
                 DataTable dt = new DataTable();//llama la instancia de DataTable para el uso de tablas
                 CH.Fill(dt);//archiva el contenido del query en la variable que pueda contener todo el query
@@ -118,7 +114,7 @@ namespace Proyecto_Labs_BDD
         {
             try
             {
-                string query = "select * from usuarios;";
+                string query = "select * from usuarios where Carrera = '"+Propiedades.Carrera_Usua+"';";
                 MySqlDataAdapter CH = new MySqlDataAdapter(query, cn);//Realiza el query y abre la conexión
                 DataTable dt = new DataTable();//llama la instancia de DataTable para el uso de tablas
                 CH.Fill(dt);//archiva el contenido del query en la variable que pueda contener todo el query
@@ -155,16 +151,83 @@ namespace Proyecto_Labs_BDD
             }
             catch (Exception ex) { MessageBox.Show("No se pudo cargar la tabla. \n Tipo: " + ex.ToString()); throw; }
         }
-        public string Solicitudes(int ID, string Herramienta, string Nombre, string Docente, string Fecha)
+        public string Solicitudes(string Herramienta, string Docente)
         {
-            string Mensaje = "Se ingreso correctamente";
+            string Mss = "Se solicito";
             try
             {
-                cmd = new MySqlCommand("insert into herramienta values("+ID+", '"+Herramienta+"', '"+Nombre+"', '"+Docente+"', '"+Fecha+"');",cn);
+                cmd = new MySqlCommand("UPDATE inventario SET Cantidad = (Cantidad - 1) WHERE ID = "+Propiedades.IDHerramientas+";",cn);
+                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd = new MySqlCommand("insert into herramienta values(0, '" + Herramienta + "', '" + Propiedades.Nombre_Usuario + "', '" + Docente + "', '" + Propiedades.Time + "', '" + Propiedades.Carrera_Usua + "');", cn);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex) { Mss = "Error de ingreso, \n Tipo: " + ex.ToString(); throw; }
+            }
+            catch (Exception ex) { Mss = "Error de al modificar inventario, \n Tipo: " + ex.ToString(); throw; }
+            return Mss;
+        }
+        public int IDherramienta(string Herramienta)
+        {
+            int contador;
+            try
+            {
+                cmd = new MySqlCommand("select substring_index(ID, ',', 2) from inventario where Descripcion = '"+Herramienta+"';", cn);//Busca exactamente una celda
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Propiedades.IDHerramientas = dr.GetInt32(0);
+                }
+                dr.Close();
+            }
+            catch (Exception ex) { MessageBox.Show("Error con la consulta Teachers" + " \n Tipo: " + ex.ToString()); }
+            return contador = Propiedades.IDHerramientas;
+        }
+        public string AddUsers(int ID, string Passwrd, string Name, int Encargado, int Teacher)
+        {
+            string Mss = "Se ingreso el nuevo usuario";
+            try
+            {
+                cmd = new MySqlCommand("insert into usuarios values("+ID+", '"+Passwrd+"', '"+ Propiedades.Carrera_Usua + "', '"+Name+"', "+Encargado+", "+Teacher+");",cn);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex){ Mensaje = "Error de ingreso, \n Tipo: " + ex.ToString(); throw; }
-            return Mensaje;
+            catch (Exception ex){ MessageBox.Show("Error al agregar usuario  \n Tipo: " + ex.ToString()); throw; }
+            return Mss;
+        }
+        public string ModUsers(int ID, string Mod, string LugarMod)
+        {
+            string Mss = "Se modifico correctamente";
+            try
+            {
+                cmd = new MySqlCommand("UPDATE usuarios SET "+LugarMod+" = '"+Mod+"' WHERE ID = " + ID + ";", cn);//Actualiza especificamente un lugar
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { Mss = "Error de al modificar Usuario, \n Tipo: " + ex.ToString(); throw; }
+            return Mss;
+        }
+        public string DeleteUser(int ID)
+        {
+            string Mss = "Se elimino correctamente";
+            try
+            {
+                cmd = new MySqlCommand("delete from usuarios WHERE ID = " + ID + " and Carrera = '"+Propiedades.Carrera_Usua+"';", cn);//eliminación por busqueda
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { Mss = "Error de al eliminar. \n Tipo: " + ex.ToString(); throw; }
+            return Mss;
+        }
+        public DataTable SearchUsers(string ID, string Search)
+        {
+            try
+            {
+                cmd = new MySqlCommand("select * from usuarios WHERE "+Search+" = '" + ID + "' and Carrera = '"+ Propiedades.Carrera_Usua+"';", cn);//Actualiza especificamente un lugar
+                MySqlDataAdapter ch = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ch.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex) {MessageBox.Show("Error de al buscar el usuario, \n Tipo: " + ex.ToString()); throw; }
         }
     }
 }

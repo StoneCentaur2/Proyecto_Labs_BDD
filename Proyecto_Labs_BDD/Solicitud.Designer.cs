@@ -118,7 +118,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(713, 15);
+            this.label2.Location = new System.Drawing.Point(342, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(224, 29);
             this.label2.TabIndex = 8;
@@ -140,7 +140,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(23, 448);
+            this.dateTimePicker1.Location = new System.Drawing.Point(801, 22);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(256, 22);
             this.dateTimePicker1.TabIndex = 10;
@@ -148,13 +148,12 @@
             // 
             // cmbx_Docente
             // 
+            this.cmbx_Docente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbx_Docente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbx_Docente.FormattingEnabled = true;
-            this.cmbx_Docente.Items.AddRange(new object[] {
-            "José María Gerónimo Pérez"});
-            this.cmbx_Docente.Location = new System.Drawing.Point(718, 53);
+            this.cmbx_Docente.Location = new System.Drawing.Point(347, 53);
             this.cmbx_Docente.Name = "cmbx_Docente";
-            this.cmbx_Docente.Size = new System.Drawing.Size(315, 33);
+            this.cmbx_Docente.Size = new System.Drawing.Size(409, 33);
             this.cmbx_Docente.TabIndex = 13;
             // 
             // Solicitud
