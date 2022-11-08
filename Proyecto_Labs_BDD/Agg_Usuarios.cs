@@ -88,14 +88,14 @@ namespace Proyecto_Labs_BDD
         {
             
         }
-
+//************************************************************** BOTON BUSCAR **********************************************
         private void button2_Click(object sender, EventArgs e)
         {
-            if (tbx_ID.Text == "")//Busqueda por nombre
+            if (tbx_Nom.Text != "")//Busqueda por nombre
             {
                 dgvUsuarios.DataSource = sql.SearchUsers(tbx_Nom.Text, "Nombre");
             }
-            else if (tbx_Nom.Text == "")//Busqueda por ID
+            else if (tbx_ID.Text != "")//Busqueda por ID
             {
                 dgvUsuarios.DataSource = sql.SearchUsers(tbx_ID.Text, "ID");
             }
@@ -103,8 +103,13 @@ namespace Proyecto_Labs_BDD
             {
                 MessageBox.Show("Rellene el campo por el cual desea buscar al usuario \n" +
                     "Ingrese en el campo ID o Por nombre");
-            }
-            LoadandClear();
+                LoadandClear();
+            }//Page 1
+            tbx_Nom.Text = "";
+            tbx_ID.Text = "";
+            tbx_Contraseña.Text = "";
+            cmb_Docente.Text = null;
+            cmb_Encargado.Text = null;
         }
 
         private void btn_ModUser_Click(object sender, EventArgs e)
