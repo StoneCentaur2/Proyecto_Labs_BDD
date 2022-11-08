@@ -295,11 +295,10 @@ namespace Proyecto_Labs_BDD
         public string AddInvent(string Descripcion, int Cantidad, string Marca, string Modelo,string Serie)
         {
             string Mss = "Se elimino correctamente";
-            string x = $"{Descripcion}";
             try
             {
 
-                cmd = new MySqlCommand("insert into inventario values(0, '"+x+"', '"+Cantidad+"', '"+Marca+"', '"+Modelo+"', '"+Serie+"', '" + Propiedades.Carrera_Usua + "');", cn);//eliminación por busqueda
+                cmd = new MySqlCommand("insert into inventario values(0, '"+Descripcion+"', '"+Cantidad+"', '"+Marca+"', '"+Modelo+"', '"+Serie+"', '" + Propiedades.Carrera_Usua + "');", cn);//eliminación por busqueda
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex) { Mss = "Error de al añadir. \n Tipo: " + ex.ToString(); throw; }
